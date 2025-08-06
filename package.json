@@ -19,6 +19,8 @@
     "prepare": "husky"
   },
   "repository": {
+    "type": "git",
+    "url": "https://github.com/maxche86/mtuci-testing.git"
   },
   "dependencies": {
     "@mantine/core": "^7.14.0",
