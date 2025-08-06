@@ -1,0 +1,33 @@
+{
+  "semi": true,
+  "tabWidth": 2,
+  "printWidth": 120,
+  "singleQuote": true,
+  "trailingComma": "all",
+  "jsxSingleQuote": true,
+  "bracketSpacing": true,
+  "useTabs": false,
+  "jsxBracketSameLine": false,
+  "arrowParens": "avoid",
+  "importOrder": [
+    "^react",
+    "^react-router-dom",
+    "^@mantine",
+    "^react-hook-form",
+    "^classnames",
+    "@vanilla-extract/css",
+    "<THIRD_PARTY_MODULES>",
+    "^~pages",
+    "^~widgets",
+    "^~features",
+    "^~entities",
+    "^~assets",
+    "^~shared",
+    "^~themes",
+    "^\\.{1,2}/(?!.*\\.css$)",
+    "^.+\\.css$"
+  ],
+  "plugins": [
+    "@trivago/prettier-plugin-sort-imports"
+  ]
+}

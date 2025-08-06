@@ -1,0 +1,70 @@
+/* Reset default styles */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  scroll-behavior: smooth;
+}
+
+a,
+button,
+input,
+textarea,
+select {
+  outline: none;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+@media (min-width: 1201px) {
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+    border-radius: 2px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #e2e7f3;
+    border-radius: 8px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #bcc3d2;
+  }
+
+  ::-webkit-scrollbar-thumb:disabled {
+    background: #ecf0f8;
+  }
+}
