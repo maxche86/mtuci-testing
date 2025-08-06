@@ -4,7 +4,8 @@ export const TTNormsProRegular = 'TT Norms Pro Regular';
 export const TTNormsProMedium = 'TT Norms Pro Medium';
 export const RobotoRegular = 'Roboto Regular';
 export const RobotoMedium = 'Roboto Medium';
-export const Onest = 'Onest;';
+export const OnestLite = 'OnestLite';
+export const OnestRegular = 'OnestRegular';
 
 globalFontFace(TTNormsProRegular, {
   fontWeight: 400,
@@ -26,22 +27,42 @@ globalFontFace(RobotoMedium, {
   src: 'url("/assets/fonts/ROBOTOMEDIUM.TTF") format("truetype")',
 });
 
-globalFontFace(Onest, {
+globalFontFace(OnestLite, {
   fontWeight: 300,
   src: 'url("/assets/fonts/ONEST.TTF") format("truetype")',
 });
 
-const OnestFont = style({
-  fontFamily: Onest,
+globalFontFace(OnestRegular, {
+  fontWeight: 400,
+  src: 'url("/assets/fonts/ONEST.TTF") format("truetype")',
+});
+
+const OnestFontLite = style({
+  fontFamily: OnestLite,
   fontWeight: '300',
 });
 
-export const onestFont = styleVariants({
+const OnestFontRegular = style({
+  fontFamily: OnestRegular,
+  fontWeight: '400',
+});
+
+export const onestFontTitle = styleVariants({
   h3: [
-    OnestFont,
+    OnestFontLite,
     {
       fontSize: '14px',
       lineHeight: '120%',
+    },
+  ],
+});
+
+export const onestFontContent = styleVariants({
+  c3: [
+    OnestFontRegular,
+    {
+      fontSize: '16px',
+      lineHeight: '24px',
     },
   ],
 });
