@@ -6,6 +6,7 @@ import { BlockingLoader } from '~shared/ui/components';
 import * as styles from './router.css';
 
 const MainPage = lazy(() => import('~pages/main'));
+const TestPage = lazy(() => import('~pages/test'));
 
 export const MainRouter: FC = () => {
   return (
@@ -15,6 +16,8 @@ export const MainRouter: FC = () => {
 
         <Routes>
           <Route path={PATH.main} element={<MainPage />} />
+
+          <Route path={PATH.test} element={<TestPage />} />
         </Routes>
       </Suspense>
     </div>

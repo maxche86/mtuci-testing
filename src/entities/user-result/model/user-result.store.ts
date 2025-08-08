@@ -1,14 +1,14 @@
 import { createStore } from '~shared/lib/store';
 
-type TestStoreState = {
+type UserResultStoreState = {
   userName: string;
 };
 
-type TestStoreActions = {
+type UserResultStoreActions = {
   setUserName: (value: string) => void;
 };
 
-export const useTestStore = createStore<TestStoreState & TestStoreActions>(
+export const useUserResultStore = createStore<UserResultStoreState & UserResultStoreActions>(
   set => ({
     userName: '',
     setUserName: (value: string) =>
@@ -20,5 +20,5 @@ export const useTestStore = createStore<TestStoreState & TestStoreActions>(
         'setUserName',
       ),
   }),
-  'PdnStore',
+  'useUserResultStore',
 );

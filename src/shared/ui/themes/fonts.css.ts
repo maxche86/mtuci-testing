@@ -58,6 +58,20 @@ export const onestFontTitle = styleVariants({
 });
 
 export const onestFontContent = styleVariants({
+  c1: [
+    OnestFontRegular,
+    {
+      fontSize: '32px',
+      lineHeight: '120%',
+    },
+  ],
+  c2: [
+    OnestFontRegular,
+    {
+      fontSize: '28px',
+      lineHeight: '42px',
+    },
+  ],
   c3: [
     OnestFontRegular,
     {

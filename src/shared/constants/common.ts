@@ -1,4 +1,4 @@
 export const PATH = {
   main: '/',
-  test: '/test',
+  test: '/user-result',
 };

@@ -1,0 +1,1 @@
+export { useUserResultStore } from './model';
