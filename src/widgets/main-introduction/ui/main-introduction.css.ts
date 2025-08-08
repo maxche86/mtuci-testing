@@ -6,6 +6,7 @@ export const container = style({
   borderRadius: '32px',
   padding: '24px',
   textAlign: 'center',
+  width: '100%',
 });
 
 export const text = style([onestFontContent.c3, { color: '#FFFFFF' }]);
