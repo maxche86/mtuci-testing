@@ -1,12 +1,12 @@
 import { FC } from 'react';
 import { Button, Flex, Input, Text } from '@mantine/core';
-import { useTestStore } from '~entities/test';
+import { useUserResultStore } from '~entities/user-result';
 import { useGoTo } from '~shared/lib/hooks/go-to.ts';
 import * as styles from './user-name-input.css.ts';
 
 export const UserNameInput: FC = () => {
-  const userName = useTestStore.use.userName();
-  const setUserName = useTestStore.use.setUserName();
+  const userName = useUserResultStore.use.userName();
+  const setUserName = useUserResultStore.use.setUserName();
   const { goToTestPage } = useGoTo();
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {

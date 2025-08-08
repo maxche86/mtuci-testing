@@ -13,5 +13,11 @@ export const BlockingLoader: FC<BlockingLoaderProps> = ({ zIndex = Z_INDEX.block
     overlayProps={{ radius: 'lg', blur: 4, fixed: true }}
     loaderProps={{ color: color.blue.$500, size: 60 }}
     visible
+    styles={{
+      overlay: {
+        backgroundColor: 'rgba(0, 0, 0, 0)',
+        backdropFilter: 'blur(20px)',
+      },
+    }}
   />
 );
