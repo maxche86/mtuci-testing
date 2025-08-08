@@ -16,7 +16,7 @@
     "lint-all": "eslint --fix .",
     "lint-cache": "eslint --cache --fix .",
     "ts:check": "tsc --skipLibCheck --noEmit",
-    "prepare": "husky && husky install"
+    "prepare": "husky"
   },
   "repository": {
     "type": "git",
