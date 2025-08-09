@@ -4,6 +4,7 @@ import { DatesProvider } from '@mantine/dates';
 import '@mantine/dates/styles.css';
 
 const theme = createTheme({
+  focusRing: 'never',
   components: {},
 });
 
