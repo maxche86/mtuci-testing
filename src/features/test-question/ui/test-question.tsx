@@ -17,6 +17,9 @@ export const TestQuestion: FC = () => {
   const testsQuestion = useTestStore.use.currentTest();
   const setAnswer = useUserResultStore.use.setAnswer();
   const answer = useUserResultStore.use.answers();
+  const addRightAnswer = useUserResultStore.use.addRightAnswer();
+  const addWrongAnswer = useUserResultStore.use.addWrongAnswer();
+  const addSkippedAnswer = useUserResultStore.use.addSkippedAnswer();
 
   const currentQuestion = id && testsQuestion.at(currentQuestionPageId - 1);
   const savedCurrentAnswer = answer.get(currentQuestionPageId);
@@ -35,8 +38,10 @@ export const TestQuestion: FC = () => {
     setAnswer(currentQuestionPageId, variantId);
     if (correctAnswer && Number(variantId) === correctAnswer) {
       setIsRightAnswer(true);
+      addRightAnswer();
     } else {
       setIsRightAnswer(false);
+      addWrongAnswer();
     }
   };
 
@@ -62,6 +67,8 @@ export const TestQuestion: FC = () => {
 
   //Условия для перехода на след страницу по кнопке "Пропустить"
   const handleSkipButton = () => {
+    addSkippedAnswer();
+    setValue('');
     if (isLastQuestion) {
       goToResultsPage();
     } else {
@@ -73,7 +80,7 @@ export const TestQuestion: FC = () => {
   return (
     currentQuestion && (
       <Flex direction='column' gap='64px' w='1142px' align='center'>
-        <Flex direction='column' align='center' gap='8px'>
+        <Flex direction='column' align='center' gap='8px' w='100%'>
           <Text className={onestFontContent.c1} c='#FFFFFF' span>
             {id} из {testsQuestion.length}
           </Text>
@@ -97,7 +104,7 @@ export const TestQuestion: FC = () => {
           </Flex>
         </Flex>
         <Flex gap='32px'>
-          <Button className={styles.buttonVariants.skip} onClick={handleSkipButton}>
+          <Button className={styles.buttonVariants.skip} onClick={handleSkipButton} disabled={!!savedCurrentAnswer}>
             Пропустить
           </Button>
           <Button className={styles.buttonVariants.next} onClick={handleRightButton} disabled={!value}>
