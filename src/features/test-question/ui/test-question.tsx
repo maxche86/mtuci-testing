@@ -3,12 +3,14 @@ import { useParams } from 'react-router-dom';
 import { Button, Flex, Radio, SimpleGrid, Text } from '@mantine/core';
 import { useTestStore } from '~entities/test/model/test.store.ts';
 import { useUserResultStore } from '~entities/user-result';
+import { useMatchMedia } from '~shared/lib/hooks';
 import { useGoTo } from '~shared/lib/hooks/go-to.ts';
-import { onestFontContent } from '~themes/fonts.css.ts';
+import { onestFontContent, onestFontTitleBold } from '~themes/fonts.css.ts';
 import { checkedRadioStyles } from '../model/helpers.ts';
 import * as styles from './test-question.css.ts';
 
 export const TestQuestion: FC = () => {
+  const { isMobile } = useMatchMedia();
   const { id } = useParams();
   const currentQuestionPageId = Number(id);
   const { goToQuestionPageId, goToResultsPage } = useGoTo();
@@ -79,13 +81,13 @@ export const TestQuestion: FC = () => {
 
   return (
     currentQuestion && (
-      <Flex direction='column' gap='64px' w='1142px' align='center'>
+      <Flex direction='column' gap='64px' w={isMobile ? '316px' : '1142px'} align='center'>
         <Flex direction='column' align='center' gap='8px' w='100%'>
-          <Text className={onestFontContent.c1} c='#FFFFFF' span>
+          <Text className={isMobile ? onestFontContent.c3 : onestFontContent.c1} c='#FFFFFF' span>
             {id} из {testsQuestion.length}
           </Text>
-          <Flex className={styles.qstContainer}>
-            <Text className={onestFontContent.c2} span ta='center'>
+          <Flex className={isMobile ? styles.qstContainer.mobile : styles.qstContainer.desktop}>
+            <Text className={isMobile ? onestFontTitleBold.t2 : onestFontContent.c2} span ta='center'>
               {currentQuestion.question}
             </Text>
             <Radio.Group value={value} onChange={handleSetVariant}>
@@ -104,10 +106,18 @@ export const TestQuestion: FC = () => {
           </Flex>
         </Flex>
         <Flex gap='32px'>
-          <Button className={styles.buttonVariants.skip} onClick={handleSkipButton} disabled={!!savedCurrentAnswer}>
+          <Button
+            className={isMobile ? styles.buttonSkip.mobile : styles.buttonSkip.desktop}
+            onClick={handleSkipButton}
+            disabled={!!savedCurrentAnswer}
+          >
             Пропустить
           </Button>
-          <Button className={styles.buttonVariants.next} onClick={handleRightButton} disabled={!value}>
+          <Button
+            className={isMobile ? styles.buttonNext.mobile : styles.buttonNext.desktop}
+            onClick={handleRightButton}
+            disabled={!value}
+          >
             {rightButtonText}
           </Button>
         </Flex>

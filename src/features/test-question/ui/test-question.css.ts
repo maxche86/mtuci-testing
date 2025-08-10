@@ -1,7 +1,7 @@
 import { style, styleVariants } from '@vanilla-extract/css';
-import { onestFontContent } from '~themes/fonts.css.ts';
+import { onestFontContent, onestFontTitle } from '~themes/fonts.css.ts';
 
-export const qstContainer = style({
+const qstContainerDefault = style({
   width: '100%',
   display: 'flex',
   flexDirection: 'column',
@@ -11,10 +11,15 @@ export const qstContainer = style({
   color: '#FFFFFF',
   padding: '24px 32px',
   borderRadius: '48px',
+  border: '1px solid #6D6D6D',
+});
+
+export const qstContainer = styleVariants({
+  desktop: [qstContainerDefault],
+  mobile: [qstContainerDefault, { borderRadius: '24px' }],
 });
 
 const button = style([
-  onestFontContent.c3,
   {
     width: '188px',
     borderRadius: '8px',
@@ -22,9 +27,10 @@ const button = style([
   },
 ]);
 
-export const buttonVariants = styleVariants({
-  skip: [
+export const buttonSkip = styleVariants({
+  desktop: [
     button,
+    onestFontContent.c3,
     {
       backgroundColor: '#222222',
       ':hover': {
@@ -32,9 +38,37 @@ export const buttonVariants = styleVariants({
       },
     },
   ],
-  next: [
+  mobile: [
     button,
+    onestFontTitle.h3,
     {
+      width: '98px',
+      padding: '7px 7px',
+      backgroundColor: '#222222',
+      ':hover': {
+        backgroundColor: '#222222',
+      },
+    },
+  ],
+});
+
+export const buttonNext = styleVariants({
+  desktop: [
+    button,
+    onestFontContent.c3,
+    {
+      backgroundColor: '#000000',
+      ':hover': {
+        backgroundColor: '#000000',
+      },
+    },
+  ],
+  mobile: [
+    button,
+    onestFontTitle.h3,
+    {
+      width: '98px',
+      padding: '7px 7px',
       backgroundColor: '#000000',
       ':hover': {
         backgroundColor: '#000000',
