@@ -1,5 +1,5 @@
-import { ChangeEvent, FC } from 'react';
-import { Button, Flex, Input, Text } from '@mantine/core';
+import { ChangeEvent, FC, KeyboardEvent } from 'react';
+import { Button, Flex, Text, TextInput } from '@mantine/core';
 import { useTestStore } from '~entities/test/model/test.store.ts';
 import { useUserResultStore } from '~entities/user-result';
 import { useMatchMedia } from '~shared/lib/hooks';
@@ -21,13 +21,19 @@ export const UserNameInput: FC = () => {
     goToQuestionPageId(currentQuestionId);
   };
 
+  const handleKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === 'Enter') {
+      goToQuestionPageId(currentQuestionId);
+    }
+  };
+
   return (
     <Flex className={isMobile ? styles.container.mobile : styles.container.desktop}>
       <Flex direction='column' gap='8px' justify='center' align='center' w='100%'>
         <Text className={isMobile ? styles.text.mobile : styles.text.desktop} span>
           Введите ваше имя
         </Text>
-        <Input placeholder='Имя' w='100%' value={userName} onChange={handleChange} />
+        <TextInput placeholder='Имя' w='100%' value={userName} onChange={handleChange} onKeyDown={handleKeyDown} />
       </Flex>
 
       <Button

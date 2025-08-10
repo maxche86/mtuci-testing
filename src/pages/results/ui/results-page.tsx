@@ -1,9 +1,14 @@
 import { FC } from 'react';
+import { Flex } from '@mantine/core';
+import { Results } from '~widgets/results';
 import { useMatchMedia } from '~shared/lib/hooks';
-import { DesktopResultsPage } from './desktop-results-page/desktop-results-page.tsx';
 
 export const ResultsPage: FC = () => {
-  const { isDesktop, isMobile } = useMatchMedia();
+  const { isMobile } = useMatchMedia();
 
-  return <div>{isDesktop && <DesktopResultsPage />}</div>;
+  return (
+    <Flex direction='column' justify='center' align='center' mt={isMobile ? '160' : '206px'}>
+      <Results />
+    </Flex>
+  );
 };

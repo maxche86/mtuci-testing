@@ -10,7 +10,14 @@ export const MainPage: FC = () => {
 
   return (
     <Flex className={styles.pageContainer}>
-      <Flex mt='238px' direction='column' gap='48px' align='center' justify='center' w={isMobile ? '245px' : '430px'}>
+      <Flex
+        pt={isMobile ? '138px' : '238px'}
+        direction='column'
+        gap='48px'
+        align='center'
+        justify='center'
+        w={isMobile ? '245px' : '430px'}
+      >
         <MainIntroduction />
 
         <UserNameInput />
