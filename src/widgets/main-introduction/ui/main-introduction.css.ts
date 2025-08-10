@@ -1,7 +1,7 @@
-import { style } from '@vanilla-extract/css';
+import { style, styleVariants } from '@vanilla-extract/css';
 import { onestFontContent } from '~themes/fonts.css.ts';
 
-export const container = style({
+const containerDefault = style({
   backgroundColor: 'rgba(20, 20, 20, 0.26)',
   borderRadius: '32px',
   padding: '24px',
@@ -9,4 +9,12 @@ export const container = style({
   width: '100%',
 });
 
-export const text = style([onestFontContent.c3, { color: '#FFFFFF' }]);
+export const container = styleVariants({
+  desktop: [containerDefault],
+  mobile: [containerDefault, { borderRadius: '16px' }],
+});
+
+export const text = styleVariants({
+  desktop: [onestFontContent.c3, { color: '#FFFFFF' }],
+  mobile: [onestFontContent.c4, { color: '#FFFFFF' }],
+});

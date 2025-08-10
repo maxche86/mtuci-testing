@@ -79,6 +79,13 @@ export const onestFontContent = styleVariants({
       lineHeight: '24px',
     },
   ],
+  c4: [
+    OnestFontRegular,
+    {
+      fontSize: '12px',
+      lineHeight: '130%',
+    },
+  ],
 });
 
 const TTNormsProMediumFont = style({

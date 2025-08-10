@@ -1,16 +1,20 @@
 import { FC } from 'react';
+import { Flex } from '@mantine/core';
+import { MainIntroduction } from '~widgets/main-introduction';
+import { UserNameInput } from '~features/user-name-input';
 import { useMatchMedia } from '~shared/lib/hooks';
-import { DesktopMainPage } from './desktop-main-page/desktop-main-page.tsx';
-import { MobileMainPage } from './mobile-main-page/mobile-main-page.tsx';
+import * as styles from './main-page.css.ts';
 
 export const MainPage: FC = () => {
-  const { isDesktop, isMobile } = useMatchMedia();
+  const { isMobile } = useMatchMedia();
 
   return (
-    <>
-      {isMobile && <MobileMainPage />}
+    <Flex className={styles.pageContainer}>
+      <Flex mt='238px' direction='column' gap='48px' align='center' justify='center' w={isMobile ? '245px' : '430px'}>
+        <MainIntroduction />
 
-      {isDesktop && <DesktopMainPage />}
-    </>
+        <UserNameInput />
+      </Flex>
+    </Flex>
   );
 };
