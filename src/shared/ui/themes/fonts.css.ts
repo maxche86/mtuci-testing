@@ -45,6 +45,13 @@ export const onestFontTitleBold = styleVariants({
 });
 
 export const onestFontTitle = styleVariants({
+  h2: [
+    OnestFontLite,
+    {
+      fontSize: '24px',
+      lineHeight: '36px',
+    },
+  ],
   h3: [
     OnestFontLite,
     {

@@ -81,7 +81,7 @@ export const TestQuestion: FC = () => {
 
   return (
     currentQuestion && (
-      <Flex direction='column' gap='64px' w={isMobile ? '316px' : '1142px'} align='center'>
+      <Flex direction='column' w={isMobile ? '316px' : '1142px'} align='center'>
         <Flex direction='column' align='center' gap='8px' w='100%'>
           <Text className={isMobile ? onestFontContent.c3 : onestFontContent.c1} c='#FFFFFF' span>
             {id} из {testsQuestion.length}
@@ -105,7 +105,7 @@ export const TestQuestion: FC = () => {
             </Radio.Group>
           </Flex>
         </Flex>
-        <Flex gap='32px'>
+        <Flex className={styles.buttonContainer}>
           <Button
             className={isMobile ? styles.buttonSkip.mobile : styles.buttonSkip.desktop}
             onClick={handleSkipButton}

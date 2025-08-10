@@ -76,3 +76,9 @@ export const buttonNext = styleVariants({
     },
   ],
 });
+
+export const buttonContainer = style({
+  position: 'absolute',
+  bottom: '248px',
+  gap: '32px',
+});
