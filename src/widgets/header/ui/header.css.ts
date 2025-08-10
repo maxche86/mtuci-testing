@@ -1,5 +1,5 @@
-import { style } from '@vanilla-extract/css';
-import { onestFontTitle } from '~themes/fonts.css.ts';
+import { style, styleVariants } from '@vanilla-extract/css';
+import { onestFontContent, onestFontTitle } from '~themes/fonts.css.ts';
 
 export const container = style({
   height: '42px',
@@ -8,10 +8,15 @@ export const container = style({
   alignItems: 'center',
 });
 
-export const text = style([
+const textDefault = style([
   onestFontTitle.h3,
   {
     color: ' #656565',
     textAlign: 'center',
   },
 ]);
+
+export const text = styleVariants({
+  desktop: [textDefault],
+  mobile: [textDefault, onestFontContent.c4],
+});
