@@ -56,5 +56,5 @@ const buttonDefault = style([
 
 export const button = styleVariants({
   desktop: [buttonDefault, onestFontContent.c3],
-  mobile: [buttonDefault, onestFontContent.c4],
+  mobile: [buttonDefault, onestFontTitle.h3],
 });

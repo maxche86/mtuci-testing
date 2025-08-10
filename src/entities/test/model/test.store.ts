@@ -14,7 +14,7 @@ type TestActions = {
 
 export const useTestStore = createStore<TestState & TestActions>(
   set => ({
-    currentTest: getRandomGroupedItems(TEST_MOCK, 40, 4).slice(0, 10),
+    currentTest: getRandomGroupedItems(TEST_MOCK, 40, 4),
     currentQuestionId: 1,
     setCurrentQuestionId: (value: number) =>
       set(
