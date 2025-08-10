@@ -10,12 +10,14 @@ import * as styles from './router.css';
 
 const MainPage = lazy(() => import('~pages/main'));
 const TestPage = lazy(() => import('~pages/test'));
+const ResultsPage = lazy(() => import('~pages/results'));
 
 export const MainRouter: FC = () => {
   const userName = useUserResultStore.use.userName();
   const { goToMainPage } = useGoTo();
 
   useEffect(() => {
+    //Признак того, что пользователь перезагрузил страницу посреди теста. Стор обнулился => начинем тест сначала с другими вопросами.
     if (!userName) {
       goToMainPage();
     }
@@ -32,6 +34,8 @@ export const MainRouter: FC = () => {
           <Route path={PATH.test.root} element={<TestPage />}>
             <Route path={PATH.test.id} element={<QuestionPage />} />
           </Route>
+
+          <Route path={PATH.results} element={<ResultsPage />} />
         </Routes>
       </Suspense>
     </div>
