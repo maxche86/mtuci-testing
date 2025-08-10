@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.1",
   "type": "module",
+  "homepage": "https://maxche86.github.io/mtuci-testing/",
   "scripts": {
     "start": "vite --host --port 5188 --open",
     "build": "tsc && vite build",
