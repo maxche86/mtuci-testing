@@ -10,12 +10,17 @@ type TestState = {
 
 type TestActions = {
   setCurrentQuestionId: (value: number) => void;
+  resetTest: () => void;
+};
+
+const initialState: TestState = {
+  currentTest: getRandomGroupedItems(TEST_MOCK, 40, 4),
+  currentQuestionId: 1,
 };
 
 export const useTestStore = createStore<TestState & TestActions>(
   set => ({
-    currentTest: getRandomGroupedItems(TEST_MOCK, 40, 4),
-    currentQuestionId: 1,
+    ...initialState,
     setCurrentQuestionId: (value: number) =>
       set(
         state => {
@@ -23,6 +28,14 @@ export const useTestStore = createStore<TestState & TestActions>(
         },
         false,
         'setCurrentQuestionId',
+      ),
+    resetTest: () =>
+      set(
+        state => {
+          state.currentTest = getRandomGroupedItems(TEST_MOCK, 40, 4);
+        },
+        false,
+        'resetTest',
       ),
   }),
   'useTestStore',

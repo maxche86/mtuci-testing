@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import { Button, Flex, Text } from '@mantine/core';
+import { useTestStore } from '~entities/test/model/test.store.ts';
 import { useUserResultStore } from '~entities/user-result';
 import { useMatchMedia } from '~shared/lib/hooks';
 import { useGoTo } from '~shared/lib/hooks/go-to.ts';
@@ -12,10 +13,12 @@ export const Results: FC = () => {
   const wrongAnswer = useUserResultStore.use.wrongAnswer();
   const skippedAnswer = useUserResultStore.use.skippedAnswer();
   const { goToMainPage } = useGoTo();
-  const resetState = useUserResultStore.use.resetState();
+  const resetUserState = useUserResultStore.use.resetState();
+  const resetTest = useTestStore.use.resetTest();
 
   const handelButton = () => {
-    resetState();
+    resetUserState();
+    resetTest();
     goToMainPage();
   };
 

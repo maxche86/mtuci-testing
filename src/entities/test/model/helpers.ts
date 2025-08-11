@@ -46,9 +46,38 @@ export function getRandomGroupedItems(array: TestType[], groupSize: number = 40,
 }
 
 /**
+ * Перемешивает массив вариантов ответов
+ *
+ * @param variants Массив вариантов ответов в формате { id: number; title: string }[]
+ * @returns Новый массив с перемешанными вариантами, сохраняя исходные id
+ */
+export function shuffleVariants(variants: { id: number; title: string }[]): { id: number; title: string }[] {
+  // Создаем копию массива, чтобы не изменять исходный
+  const shuffled = [...variants];
+
+  // Алгоритм Фишера-Йетса (Fisher-Yates shuffle)
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    // Выбираем случайный индекс от 0 до i
+    const j = Math.floor(Math.random() * (i + 1));
+
+    // Меняем элементы местами
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+
+  return shuffled;
+}
+
+export function createShuffledCollection(questions: TestType[]): TestType[] {
+  return questions.map(question => ({
+    ...question,
+    variants: shuffleVariants(question.variants),
+  }));
+}
+
+/**
  * Вспомогательная функция для выбора случайных элементов из группы
  */
-function getRandomItemsFromGroup<T>(group: T[], count: number): T[] {
+function getRandomItemsFromGroup(group: TestType[], count: number): TestType[] {
   // Если элементов меньше чем требуется, вернем все элементы
   if (group.length <= count) {
     return [...group];
@@ -56,7 +85,7 @@ function getRandomItemsFromGroup<T>(group: T[], count: number): T[] {
 
   // Создаем копию группы, чтобы не изменять оригинал
   const groupCopy = [...group];
-  const result: T[] = [];
+  const result: TestType[] = [];
 
   // Выбираем случайные элементы
   for (let i = 0; i < count; i++) {
@@ -68,5 +97,5 @@ function getRandomItemsFromGroup<T>(group: T[], count: number): T[] {
     groupCopy.splice(randomIndex, 1);
   }
 
-  return result;
+  return createShuffledCollection(result);
 }
