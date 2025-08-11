@@ -19,7 +19,7 @@ export const MainRouter: FC = () => {
   useEffect(() => {
     //Признак того, что пользователь перезагрузил страницу посреди теста. Стор обнулился => начинем тест сначала с другими вопросами.
     if (!userName) {
-      goTo('https://maxche86.github.io/mtuci-testing/', { replace: true });
+      goTo('/mtuci-testing/', { replace: true });
     }
   }, [userName]);
 
