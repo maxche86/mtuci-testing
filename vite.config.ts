@@ -5,7 +5,7 @@ import { defineConfig } from 'vite';
 import svgr from 'vite-plugin-svgr';
 
 export default defineConfig({
-  base: 'https://maxche86.github.io/mtuci-testing/',
+  base: '/mtuci-testing/',
   build: {
     outDir: 'dist',
   },
