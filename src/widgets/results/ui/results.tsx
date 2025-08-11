@@ -16,6 +16,8 @@ export const Results: FC = () => {
   const resetUserState = useUserResultStore.use.resetState();
   const resetTest = useTestStore.use.resetTest();
 
+  const scoredPoints = rightAnswer * 2;
+
   const handelButton = () => {
     resetUserState();
     resetTest();
@@ -40,6 +42,10 @@ export const Results: FC = () => {
           <Flex className={isMobile ? styles.textContainer.mobile : styles.textContainer.desktop}>
             <Text span>Пропущенные</Text>
             <Text span>{skippedAnswer}</Text>
+          </Flex>
+          <Flex className={isMobile ? styles.textContainer.mobile : styles.textContainer.desktop}>
+            <Text span>Баллы</Text>
+            <Text span>{scoredPoints}</Text>
           </Flex>
         </Flex>
       </Flex>
