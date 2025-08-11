@@ -14,12 +14,12 @@ const ResultsPage = lazy(() => import('~pages/results'));
 
 export const MainRouter: FC = () => {
   const userName = useUserResultStore.use.userName();
-  const { goToMainPage } = useGoTo();
+  const { goTo } = useGoTo();
 
   useEffect(() => {
     //Признак того, что пользователь перезагрузил страницу посреди теста. Стор обнулился => начинем тест сначала с другими вопросами.
     if (!userName) {
-      goToMainPage();
+      goTo('https://maxche86.github.io/mtuci-testing/');
     }
   }, [userName]);
 
