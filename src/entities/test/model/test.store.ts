@@ -14,7 +14,7 @@ type TestActions = {
 };
 
 const initialState: TestState = {
-  currentTest: getRandomGroupedItems(TEST_MOCK, 40, 4),
+  currentTest: getRandomGroupedItems(TEST_MOCK, 40, 2),
   currentQuestionId: 1,
 };
 
