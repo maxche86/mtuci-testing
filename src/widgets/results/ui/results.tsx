@@ -16,7 +16,7 @@ export const Results: FC = () => {
   const resetUserState = useUserResultStore.use.resetState();
   const resetTest = useTestStore.use.resetTest();
 
-  const scoredPoints = rightAnswer * 2;
+  const scoredPoints = rightAnswer * 5;
 
   const handelButton = () => {
     resetUserState();
