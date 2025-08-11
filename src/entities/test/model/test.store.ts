@@ -32,7 +32,7 @@ export const useTestStore = createStore<TestState & TestActions>(
     resetTest: () =>
       set(
         state => {
-          state.currentTest = getRandomGroupedItems(TEST_MOCK, 40, 4);
+          state.currentTest = getRandomGroupedItems(TEST_MOCK, 40, 2);
         },
         false,
         'resetTest',
