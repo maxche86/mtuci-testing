@@ -1,1 +1,0 @@
-import{a as s,j as e,F as a,O as o}from"./index-CxK78ZHa.js";import{Q as u}from"./index-CxK78ZHa.js";const i=()=>{const{isMobile:t}=s();return e.jsx(a,{direction:"column",justify:"center",align:"center",pt:t?"60":"206px",children:e.jsx(o,{})})};export{u as QuestionPage,i as default};
