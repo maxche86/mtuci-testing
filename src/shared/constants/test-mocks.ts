@@ -1,4 +1,7 @@
 import { TestType } from '~shared/types/common.ts';
+import TestDataV2 from '../../../public/assets/testsv2.json';
+
+export const TEST_MOCK_V2 = TestDataV2;
 
 export const TEST_MOCK: TestType[] = [
   {
