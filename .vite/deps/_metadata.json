@@ -1,0 +1,73 @@
+{
+  "hash": "3527162e",
+  "configHash": "09dd2c47",
+  "lockfileHash": "80aafd6e",
+  "browserHash": "a17c91bd",
+  "optimized": {
+    "react/jsx-dev-runtime": {
+      "src": "../../node_modules/react/jsx-dev-runtime.js",
+      "file": "react_jsx-dev-runtime.js",
+      "fileHash": "ca6f6f95",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "efeee77d",
+      "needsInterop": true
+    },
+    "@mantine/core": {
+      "src": "../../node_modules/@mantine/core/esm/index.mjs",
+      "file": "@mantine_core.js",
+      "fileHash": "f382455c",
+      "needsInterop": false
+    },
+    "@mantine/dates": {
+      "src": "../../node_modules/@mantine/dates/esm/index.mjs",
+      "file": "@mantine_dates.js",
+      "fileHash": "61aebf31",
+      "needsInterop": false
+    },
+    "@tanstack/react-query": {
+      "src": "../../node_modules/@tanstack/react-query/build/modern/index.js",
+      "file": "@tanstack_react-query.js",
+      "fileHash": "417efed1",
+      "needsInterop": false
+    },
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "03a23402",
+      "needsInterop": true
+    },
+    "react-router-dom": {
+      "src": "../../node_modules/react-router-dom/dist/index.js",
+      "file": "react-router-dom.js",
+      "fileHash": "73067811",
+      "needsInterop": false
+    },
+    "@vanilla-extract/css": {
+      "src": "../../node_modules/@vanilla-extract/css/dist/vanilla-extract-css.browser.esm.js",
+      "file": "@vanilla-extract_css.js",
+      "fileHash": "fa4bca4b",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-4CEHTQVP": {
+      "file": "chunk-4CEHTQVP.js"
+    },
+    "chunk-XN2B5E4Y": {
+      "file": "chunk-XN2B5E4Y.js"
+    },
+    "chunk-5DGLZQX2": {
+      "file": "chunk-5DGLZQX2.js"
+    },
+    "chunk-ZDUQQDQL": {
+      "file": "chunk-ZDUQQDQL.js"
+    },
+    "chunk-QWN5BXRD": {
+      "file": "chunk-QWN5BXRD.js"
+    }
+  }
+}
