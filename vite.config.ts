@@ -5,7 +5,7 @@ import { defineConfig } from 'vite';
 import svgr from 'vite-plugin-svgr';
 
 export default defineConfig({
-  base: '/mtuci-testing/',
+  base: process.env.NODE_ENV === 'production' ? '/mtuci-testing/' : '/',
   build: {
     outDir: 'dist',
   },

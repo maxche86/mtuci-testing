@@ -6,7 +6,7 @@ import * as styles from './main-introduction.css.ts';
 
 export const MainIntroduction: FC = () => {
   const { isMobile } = useMatchMedia();
-  const totalQntQuestion = useTestStore.use.currentTest().length;
+  const totalQntQuestion = useTestStore.use.currentTest().tests.length;
 
   return (
     <Flex className={isMobile ? styles.container.mobile : styles.container.desktop}>

@@ -28,7 +28,7 @@ export const UserNameInput: FC = () => {
   };
 
   return (
-    <Flex className={isMobile ? styles.container.mobile : styles.container.desktop}>
+    <Flex direction='column' gap='32px'>
       <Flex direction='column' gap='8px' justify='center' align='center' w='100%'>
         <Text className={isMobile ? styles.text.mobile : styles.text.desktop} span>
           Введите ваше имя

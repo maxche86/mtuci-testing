@@ -23,13 +23,13 @@ export const TestQuestion: FC = () => {
   const addWrongAnswer = useUserResultStore.use.addWrongAnswer();
   const addSkippedAnswer = useUserResultStore.use.addSkippedAnswer();
 
-  const currentQuestion = id && testsQuestion.at(currentQuestionPageId - 1);
+  const currentQuestion = id && testsQuestion.tests.at(currentQuestionPageId - 1);
   const savedCurrentAnswer = answer.get(currentQuestionPageId);
   const correctAnswer = currentQuestion && currentQuestion?.answer;
 
   const rightButtonText = !answer.get(currentQuestionPageId) ? 'Проверка' : 'Дальше';
 
-  const isLastQuestion = currentQuestionPageId === testsQuestion.length;
+  const isLastQuestion = currentQuestionPageId === testsQuestion.tests.length;
 
   const handleSetVariant = (variantId: string) => {
     setValue(variantId);
@@ -84,7 +84,7 @@ export const TestQuestion: FC = () => {
       <Flex direction='column' w={isMobile ? '316px' : '1142px'} align='center'>
         <Flex direction='column' align='center' gap='8px' w='100%'>
           <Text className={isMobile ? onestFontContent.c3 : onestFontContent.c1} c='#FFFFFF' span>
-            {id} из {testsQuestion.length}
+            {id} из {testsQuestion.tests.length}
           </Text>
           <Flex className={isMobile ? styles.qstContainer.mobile : styles.qstContainer.desktop}>
             <Text className={isMobile ? onestFontTitleBold.t2 : onestFontContent.c2} span ta='center'>
