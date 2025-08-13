@@ -1,5 +1,5 @@
 import { FC, lazy, Suspense, useEffect } from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { HashRouter, Route, Routes } from 'react-router-dom';
 import { QuestionPage } from '~pages/test';
 import { Header } from '~widgets/header';
 import { useUserResultStore } from '~entities/user-result';
@@ -43,7 +43,7 @@ export const MainRouter: FC = () => {
 };
 
 export const Router = () => (
-  <BrowserRouter>
+  <HashRouter>
     <MainRouter />
-  </BrowserRouter>
+  </HashRouter>
 );
